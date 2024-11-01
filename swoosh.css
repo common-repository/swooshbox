@@ -1,0 +1,153 @@
+.lightboxed > *:not(.lightbox) {
+  filter: blur(1px) brightness(0.7);
+  transition: filter 0.6s ease-out !important;
+  -webkit-transition: -webkit-filter 0.6s ease-out !important;
+  -webkit-filter: blur(1px) brightness(0.7);
+} 
+
+.lightboxed.SBChover > *:not(.lightbox) {
+	filter: brightness(0.7);
+ 	-webkit-filter: brightness(0.7);
+	transition: filter 0.3s !important;
+	-webkit-transition: -webkit-filter 0.3s !important;
+}
+.SBChover .lightbox img, .SBChover .SBcaption {
+	filter: blur(2px);
+	-webkit-filter: blur(2px);
+}
+
+.SBChover .lightbox .SBclose:active, 
+.SBclose:active ~ img,
+.lightbox:active img {
+	opacity: 0 !important;
+	filter: blur(10px);
+	-webkit-filter: blur(10px);
+	transition: all 0.2s !important;
+	-webkit-transition: all 0.2s !important;
+}
+.sidebutton:active ~ img {
+	opacity: 1 !important;
+	filter: none;
+	-webkit-filter: none;
+}
+
+
+a.lightboxready {
+	position: relative;
+	cursor: zoom-in;
+}
+a.lit img {
+	opacity: 0;
+	transition: opacity 0s;
+	-webkit-transition: opacity 0s;
+	visibility: hidden;
+}
+
+.target {
+	position: fixed;
+	width: 1px;
+	height: 1px;
+	opacity: 0;
+	top: -999999999px;
+}
+.lightbox {
+	z-index: 10;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	text-align: center;
+}
+.lightbox img {
+	position: absolute;
+	transition: all 0s;
+	-webkit-transition: all 0s;
+}
+img.dummy {
+	width: 32px;
+	height: 16px;
+	position: absolute;
+	visibility: hidden;
+}
+
+
+.sidebutton {
+	position: fixed;
+	top: 45%;
+	font-size: 50px;
+	font-family: 'Courier New', Courier, monospace;
+	font-weight: 700;
+	color: #fff;
+	background: rgba(0, 0, 0, 0.7);
+	line-height: 1;
+	padding: 0px 0 5px;
+	vertical-align: top;
+	width: 50px;
+	text-align: center;
+	cursor: pointer;
+	z-index: 2;
+}
+.sidebutton:active {
+	color: #ccc;
+}
+.sidebutton.right {
+	right: 0px;
+	border-radius: 100px 0px 0px 100px;
+	text-align: right;
+	padding-right: 6px;
+}
+.sidebutton.left {
+	left: 0px;
+	border-radius: 0 100px 100px 0;
+	text-align: left;
+	padding-left: 6px;
+}
+.sidebutton.show {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.SBclose {
+	position: fixed;
+	top: 0.5em;
+	right: 1em;
+	font-family: 'Comic Sans MS', sans-serif;
+	color: #fff;
+	cursor: pointer;
+	text-shadow: -1px 6px 10px #000;
+}
+
+.SBcaption {
+	position: fixed;
+	bottom: 1em;
+	font-size: 1.2em;
+	display: inline-block;
+	background: #fff;
+	color: #111;
+	transition: all 1s;
+	-webkit-transition: all 1s;
+	z-index: 10;
+	padding: 0 1em 3px;
+	left: 45%;
+	max-width: 50%;
+	box-shadow: 0 0 0 1px #fff, 0 10px 10px -5px rgba(0, 0, 0, 0.8);
+	text-shadow: 0 -1px 0px rgba(0, 0, 0, 0.7);
+	border: 1px dashed #999;
+}
+
+.SBcaption.hidden {
+	bottom: -1em;
+	opacity: 0;
+	transition: all 0s;
+}
+
+.swooshbox-data {
+	display: none;
+}
+
+@media all and (min-width: 900px) {
+	.SBcaption {
+		font-size: 2em;
+	}
+}
